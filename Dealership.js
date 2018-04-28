@@ -3,7 +3,19 @@ var Car = function () {
 
 	this.categories = "";
 	this.rentalPrice = 0;
-	this.availability = false;
+	this.availability = function() {
+		if (avaiableNumber == 0){
+			return false;
+
+		}else{
+			return true;
+		}
+	};
+	this.setAvailableNumber = function(Num){
+		avaiableNumber = Num;
+
+		return avaiableNumber;
+	}
 	this.getAvailableNumber = function() {
 		return avaiableNumber;
 	};
@@ -11,7 +23,7 @@ var Car = function () {
 
 		if(avaiableNumber >= 0){
 			avaiableNumber -= 1;
-			return "Name of this type of cars left: " + avaiableNumber;
+			return "One car requested, number of this type of cars left: " + avaiableNumber;
 
 		}else{
 			return"No more available";
@@ -21,4 +33,6 @@ var Car = function () {
 
 }
 
-var car1 = new Car;
+var car = new Car;
+car.setAvailableNumber(10);
+car.categories = "SUV";
