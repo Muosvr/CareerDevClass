@@ -21,7 +21,7 @@ var Car = function () {
 	};
 	this.request = function() {
 
-		if(avaiableNumber >= 0){
+		if(avaiableNumber > 0){
 			avaiableNumber -= 1;
 			return "One car requested, number of this type of cars left: " + avaiableNumber;
 
